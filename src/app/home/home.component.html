@@ -1,0 +1,24 @@
+<p>{{title}}</p>
+
+<input type="text" [(ngModel)]="num">
+
+<!-- <img [src]="pic" alt=""> -->
+
+<p>
+    {{num}}
+</p>
+
+<button (click)="save()">Save</button>
+<button (click)="showList()">{{isAcceptabel? "hide" : "show"}}</button>
+
+<!-- სტრუქტურული დირექტივა -->
+
+<div class="parent" *ngIf="isAcceptabel">
+    <div class="box" *ngFor="let el of numArr let index =index">
+        <h1> {{el}}</h1>
+        <button (click)="delete(index)">delete</button>
+    </div>
+</div>
+
+
+ 
