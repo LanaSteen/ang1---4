@@ -1,0 +1,14 @@
+<div>
+    <input [(ngModel)]="student.name" type="text" placeholder="name">
+    <input [(ngModel)]="student.email" type="text" placeholder="email">
+    <input [(ngModel)]="student.age" type="text" placeholder="age">
+    <input [(ngModel)]="student.address.city" type="text" placeholder="city">
+    <input [(ngModel)]="student.address.state" type="text" placeholder="state">
+    <button (click)="addStudent()">Add student</button>
+</div>
+
+<div *ngFor="let el of studentsArray let i = index">
+    <h1>{{el.name}}</h1>
+    <p>{{el.email}}</p>
+    <button (click)="deleteStrudent(i)">Delete</button>
+</div>
