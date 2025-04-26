@@ -1,0 +1,17 @@
+<p>user works!</p>
+
+
+
+<main>
+    <div class="card" *ngFor="let user of usersArr">
+        <img [src]="user.avatar" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{{user.first_name}}</h5>
+            <h5 class="card-title">{{user.last_name}}</h5>
+            <h5 class="card-title">{{user.email}}</h5>
+            <h5 class="card-title">{{user.id}}</h5>
+            <button routerLink="/details/{{user.id}}">See Details</button>
+        </div>
+        <hr>
+    </div>
+</main>
