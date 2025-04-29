@@ -1,0 +1,7 @@
+<div *ngIf="product">
+    <img [src]="product.image" alt="">
+    <h1>{{product.title}}</h1>
+    <p>{{product.description}}</p>
+</div>
+
+<h1 *ngIf="!product">Product not found</h1>

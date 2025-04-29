@@ -1,0 +1,12 @@
+<main>
+    <div class="card" *ngFor="let el of products">
+        <img [src]="el.image" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{{el.title}}</h5>
+            <h5 class="card-title">{{el.description}}</h5>
+            
+            <button routerLink="/products/{{el.id}}">See Details</button>
+        </div>
+        <hr>
+    </div>
+</main>
