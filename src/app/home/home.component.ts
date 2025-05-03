@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonService } from '../services/common.service';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../services/api.service';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +13,24 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent{
+
+  constructor(
+     private common : CommonService,
+     private api : ApiService
+    ){
+
+  }
+
+  ngOnInit(){
+
+    this.api.getProduct().subscribe((resp :any) => {
+      console.log(resp)
+      this.productArr = resp
+     })
+
+  }
+
 
   title = "saxeli"
   num! : number | null
@@ -44,4 +65,16 @@ export class HomeComponent {
       this.numArr.splice(ind, 1)
   }
 
+
+ productArr : Product[] = []
+
+
+  printHi(){
+     this.common.print()
+
+
+
+
+
+  }
 }

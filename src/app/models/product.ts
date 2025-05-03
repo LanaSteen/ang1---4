@@ -5,8 +5,12 @@ export class Product {
     description?: string
     category?: string
     image?: string
-    rating?: {
-      rate: number
-      count: number
-    }
+    rating?: Rating = new Rating
+}
+
+
+
+export class Rating {
+  rate?: number
+  count?: number
 }
